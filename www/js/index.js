@@ -35,7 +35,23 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
+	}
     // Update DOM on a Received Event
+
+	loadBooks: function(){
+		var request = new XMLHttpRequest();
+		request.open("GET", "http://www.reallynicerecipes.com/recipe/breads/white-loaf");
+		request.onreadystatechange = function() {
+			if (request.readyState === 4) {
+				if (resquest.readystatus ===200 || request.status === 0) {
+					console.log("response: " + request.responseText);
+				}
+			}
+	};
+	
+	
+	request.send
+	
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
